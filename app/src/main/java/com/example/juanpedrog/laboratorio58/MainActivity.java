@@ -7,6 +7,12 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.telecom.Call;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,11 +20,13 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     RecyclerView lista;
     List<Item> datos=new ArrayList<Item>();
+    Button respaldar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         lista=findViewById(R.id.lista);
+        respaldar=findViewById(R.id.respaldar);
         //Obtener el historial de llamadas
         Cursor mCursor=managedQuery(CallLog.Calls.CONTENT_URI,null,null,null,null);
         int number=mCursor.getColumnIndex(CallLog.Calls.NUMBER);
@@ -52,6 +60,19 @@ public class MainActivity extends AppCompatActivity {
         lista.setLayoutManager(layoutManager);
         lista.setAdapter(adapter);
 
+        respaldar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DatabaseReference db=FirebaseDatabase.getInstance().getReference();
+                for(int i=0;i<datos.size();i++){
+                    db.child(i+"").child("number").setValue(datos.get(i).getNumber());
+                    db.child(i+"").child("date").setValue(datos.get(i).getDate().toString());
+                    db.child(i+"").child("duration").setValue(datos.get(i).getDuration());
+                    db.child(i+"").child("type").setValue(datos.get(i).getType());
+                }
+                Toast.makeText(getApplicationContext(),"Respaldo completo",Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 }

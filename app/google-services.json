@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1073376110479",
+    "firebase_url": "https://laboratorio59-6f8c1.firebaseio.com",
+    "project_id": "laboratorio59-6f8c1",
+    "storage_bucket": "laboratorio59-6f8c1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1073376110479:android:a42e594cf502dbdc",
+        "android_client_info": {
+          "package_name": "com.example.juanpedrog.laboratorio58"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1073376110479-rfi8ik0hqc6ndqh0d58u3muts8nikps5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.juanpedrog.laboratorio58",
+            "certificate_hash": "b21e980a78f3b00910fcbdd0116ac488ea7d9ccf"
+          }
+        },
+        {
+          "client_id": "1073376110479-mfsrkvm37mbomovsp4h88bq7aivg9br6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6yK3WmPZELIGnUv9F-uEibJeduqBMOnY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1073376110479-mfsrkvm37mbomovsp4h88bq7aivg9br6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
